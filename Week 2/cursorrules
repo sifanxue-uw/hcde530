@@ -1,0 +1,16 @@
+# Cursor rules (Week 2)
+
+## Repo conventions
+- Organize work by week folders (e.g. `Week 2/`, `Week 3/`).
+- Prefer descriptive names; avoid vague `demo_*` once the work stabilizes.
+- Do not commit OS/editor noise or secrets (keep `.DS_Store` and tokens/keys out of git).
+- When using paths in shell commands, quote paths with spaces (e.g. `Week 2`).
+- Before sharing results, keep the repo clean: `git status` clean, commit with a clear message, then `git push`.
+
+## Python analysis conventions
+- Prefer scripts that can run from the repo root without manual edits.
+- When reading data files, prefer paths relative to the script location (not the current working directory).
+- When reading CSVs, be explicit with `encoding="utf-8"` and `newline=""` (for Python `csv`).
+- Keep output deterministic and easy to scan (clear headers, stable ordering).
+- If adding dependencies, document them (e.g. `requirements.txt`) and avoid heavyweight deps unless needed.
+
