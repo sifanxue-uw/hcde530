@@ -1,0 +1,13 @@
+participant_id,role,response
+P01,UX Researcher,"When I inherit a project, I start by reading whatever artifacts exist—tickets, docs, old decks. If nothing is written down, I treat the first week as \"archaeology\" and document what I learn as I go."
+P02,UX Designer,"I’m getting better at making my files readable: consistent naming, short notes at the top, and small checklists. It’s not fancy, but it prevents me from repeating the same work later."
+P03,Product Manager,"The biggest gap for our team is turning insights into decisions. I’ve started writing a one-page decision note after research instead of a long slide deck, and it gets more follow-through."
+P04,UX Researcher,"I used AI to summarize interview transcripts, but I still review the raw quotes. The summaries are helpful for speed, but they sometimes miss the nuance that changes the interpretation."
+P05,Content Strategist,"Documentation matters most when handoffs happen. If the rationale isn’t captured, people rewrite the same text problems again and again, especially for error messages and microcopy."
+P06,UX Designer,"I can’t understand code by just reading it, so I run it and inspect outputs. I write comments near the parts I don’t understand yet, so future me knows where to focus next time."
+P07,UX Researcher,"Recruiting is still the bottleneck. I’m experimenting with a shared participant tracker and templates for outreach emails so we don’t reinvent the process every study."
+P08,Product Manager,"I’ve started adding a confidence level to research takeaways (high/medium/low). It helps stakeholders understand what’s solid versus what’s directional."
+P09,UX Designer,"Stakeholder alignment is easier when I document constraints explicitly—timeline, technical limits, and what we’re not doing. People argue less when the trade-offs are written down."
+P10,Content Strategist,"A terminology audit sounds boring, but inconsistent labels confuse users. I’m pushing for a simple glossary doc so design and engineering can reuse the same words."
+P11,UX Researcher,"Synthesis is where participation drops. I’m trying an async approach: share a small set of clips, ask teammates to tag themes, then I consolidate and document the final map."
+P12,Product Manager,"We don’t always have a researcher available, so I sometimes do interviews myself. Having a lightweight interview guide and a clear note-taking template makes the results more usable."
