@@ -1,15 +1,37 @@
 # Week 3 — A3 competency claim
 
-## Competency
+## Competency: debugging messy survey data with clear version history
 
-I can debug CSV-driven Python workflows end to end: reproduce failures from messy survey exports, fix type and logic bugs so scripts finish without errors, and separate **cleaning** (normalize fields, write a tidy dataset) from **analysis** (summaries on the original or cleaned file).
+### What this competency means to me
 
-## Evidence in this repo
+For me, this week is partly about **attention to detail** when correcting errors: a wrong data type in one cell, a default `sort` that quietly flips the meaning of “top five,” or an empty field that shows up as a blank label in a summary. Those issues are small on their own, but they change the story the script tells, so catching them matters.
 
-- **`week3_analysis_buggy.py`** — Fixed script from class: handles non-numeric `experience_years`, corrects “top 5” satisfaction order, labels empty roles, and writes a text summary file when run on `week3_survey_messy.csv`.
-- **Commit history** — Two commits document the main fixes (see **Commit notes** below).
-- **`week3_clean_survey.py`** — Cleaning script with inline comments describing the loop, field normalization, and what is written to **`week3_survey_clean.csv`**.
-- **`week3_survey_messy.csv`** — Messy input used to exercise both scripts.
+I also care about **using several commits while debugging** as a form of **version control**. Each commit is a checkpoint with a message that says what was wrong and what I changed, so the history reads like a short log of the investigation instead of one vague “fixed stuff” step.
+
+### What I did this week (evidence)
+
+- **`week3_analysis_buggy.py`** — Diagnosed and fixed the class script so it runs on `week3_survey_messy.csv` without errors: non-numeric `experience_years`, wrong satisfaction ranking, empty `role` labels, and a written summary file.
+- **`week3_clean_survey.py`** — Extended the cleaning idea with inline `#` comments: what the loop does, how fields are normalized, and what gets written to **`week3_survey_clean.csv`**.
+- **`week3_survey_messy.csv`** — Messy input used for both pipelines.
+- **Git history** — Two separate commits, each tied to a concrete bug (see **Commit notes** below), so the debugging process is visible in the repo.
+
+### How multiple commits support debugging for me
+
+Splitting fixes into **two commits** matched how I actually worked: first unblock the crash (`ValueError` on `fifteen`), then fix logic and output (sort direction, `Unknown` role, summary file, cleaner). If something regressed, I could compare states commit by commit instead of rereading one giant diff. That is the version-control habit I want to practice: **small, named steps** instead of one opaque push.
+
+### What I learned about reading or writing code
+
+Reading tracebacks and scanning the CSV row that triggered them taught me to connect **runtime errors** to **specific cells**, not only to “Python is broken.” Writing the cleaning script also made me think about **where** normalization should live (one place that writes a clean file) versus **what** the analysis script should assume.
+
+### One concrete example (file, snippet, or decision)
+
+In **`week3_analysis_buggy.py`**, the satisfaction “top five” bug was subtle: the code sorted ascending and sliced the first five, which listed the **lowest** scores. Switching to `reverse=True` was a one-word change with a big meaning difference—exactly the kind of detail I want to catch by reading output and questioning whether it matches the question we asked of the data.
+
+### What I want to improve next
+
+I want to get faster at **sanity-checking outputs** (totals, extremes, empty categories) before I call a script “done,” and at writing commit messages that stay specific even when I fix more than one line in a pass.
+
+---
 
 ## Commit notes (A3 — two commits, one main bug each)
 
@@ -33,7 +55,7 @@ I can debug CSV-driven Python workflows end to end: reproduce failures from mess
 
 ---
 
-*If your `git log` shows a `Made-with: Cursor` line under the message, that came from a local git template; you can remove it with `git rebase -i` and `reword`, or leave it—either way the two commit subjects above match the assignment style.*
+*If your `git log` shows a `Made-with: Cursor` line under the message, that came from a local git template; you can remove it with `git rebase -i` and `reword`, or leave it.*
 
 ## How to run
 
