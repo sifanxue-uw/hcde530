@@ -1,6 +1,11 @@
 .DS_Store
 **/.DS_Store
 
+# Python bytecode
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
 # Secrets (A4 / APIs with keys): never commit real keys
 .env
 **/.env
