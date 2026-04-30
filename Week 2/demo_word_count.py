@@ -2,15 +2,23 @@ import csv
 
 
 # Load the CSV file
+# Load the CSV file and store the file name in a variable for easy modification later/加载CSV文件，把文件名存在一个变量里，方便以后修改
 filename = "demo_responses.csv"
 responses = []
 
+
+# 打开CSV文件并逐行读取，每一行会自动变成一个字典（列名对应值）/Open the CSV file and read it line by line. Each line will automatically be converted into a dictionary (with column names corresponding to values).
 with open(filename, newline="", encoding="utf-8") as f:
     reader = csv.DictReader(f)
     for row in reader:
         responses.append(row)
 
+# any inline comments yep let me try chinese now 中文也可以呢
+# Yeah I can see that inline comments above!
 
+
+
+# 定义一个函数：计算一段文字里有多少个单词/Define a function: count the number of words in a response string
 def count_words(response):
     """Count the number of words in a response string.
 
